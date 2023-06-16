@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TaskList from './components/TaskList.js';
 import './App.css';
 
@@ -15,7 +15,6 @@ const TASKS = [
   },
 ];
 
-
 {
   const [tasks, setTasks] = useState(TASKS); // Store tasks in state
 
@@ -29,7 +28,7 @@ const TASKS = [
       });
     });
   };
-  
+
   return (
     <div className="App">
       <header className="App-header">
