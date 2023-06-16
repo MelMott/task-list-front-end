@@ -15,19 +15,9 @@ const TASKS = [
   },
 ];
 
-{
-  const [tasks, setTasks] = useState(TASKS); // Store tasks in state
 
-  const toggleTaskCompletion = (taskId) => {
-    setTasks((prevTasks) => {
-      return prevTasks.map((task) => {
-        if (task.id === taskId) {
-          return { ...task, isComplete: !task.isComplete };
-        }
-        return task;
-      });
-    });
-  };
+const App = () => {
+  const [tasks, setTasks] = useState(TASKS); // Store tasks in state
 
   return (
     <div className="App">
