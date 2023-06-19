@@ -23,10 +23,16 @@ const App = () => {
     setTasks((prevTasks) => {
       return prevTasks.map((task) => {
         if (task.id === taskId) {
-          return { ...task, isComplete: !task.isComplete };
+          return { ...task, };
         }
         return task;
       });
+    });
+  }
+
+  const removeTask = (taskId) => {
+    setTasks((prevTasks) => {
+      return prevTasks.filter((task) => task.id !== taskId);
     });
   };
 
@@ -36,7 +42,7 @@ const App = () => {
         <h1>Ada&apos;s Task List</h1>
       </header>
       <main>
-        <div><TaskList tasks={TASKS} setComplete={setComplete} /></div>
+        <div><TaskList tasks={tasks} setComplete={setComplete} removeTask={removeTask} /></div>
       </main>
     </div>
   );
