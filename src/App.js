@@ -19,7 +19,7 @@ const TASKS = [
 const App = () => {
   const [tasks, setTasks] = useState(TASKS); // Store tasks in state
 
-  const toggleTaskCompletion = (taskId) => {
+  const setComplete = (taskId) => {
     setTasks((prevTasks) => {
       return prevTasks.map((task) => {
         if (task.id === taskId) {
@@ -36,7 +36,7 @@ const App = () => {
         <h1>Ada&apos;s Task List</h1>
       </header>
       <main>
-        <div><TaskList tasks={TASKS} toggleTaskCompletion={toggleTaskCompletion} /></div>
+        <div><TaskList tasks={TASKS} setComplete={setComplete} /></div>
       </main>
     </div>
   );
