@@ -23,7 +23,7 @@ const App = () => {
     setTasks((prevTasks) => {
       return prevTasks.map((task) => {
         if (task.id === taskId) {
-          return { ...task, };
+          return { ...task, ['isComplete']: !task.isComplete };
         }
         return task;
       });
