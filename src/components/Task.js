@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Task.css';
 
-const Task = ({ id, title, isComplete, removeTask }) => {
-  const [complete, setComplete] = useState(isComplete);
-  const buttonClass = complete ? 'tasks__item__toggle--completed' : '';
+const Task = ({ id, title, isComplete, setComplete, removeTask }) => {
+
+  const buttonClass = isComplete ? 'tasks__item__toggle--completed' : '';
 
   return (
     <li className="tasks__item">
