@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import TaskList from './components/TaskList.js';
 import './App.css';
 
@@ -36,6 +37,19 @@ const App = () => {
     });
   };
 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const response = await axios.get('http from our tasklist goes here');
+        setTasks(response.data);
+      } catch (error) {
+        console.error('Error fetching tasks:', error);
+      }
+    };
+  
+    fetchTasks();
+  }, []);
+  
   return (
     <div className="App">
       <header className="App-header">
