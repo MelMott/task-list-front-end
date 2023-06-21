@@ -19,6 +19,17 @@ const TASKS = [
 
 const App = () => {
   const [tasks, setTasks] = useState(TASKS); // Store tasks in state
+  
+//   const setComplete = async (taskId) => {
+//   try {
+//     const taskToUpdate = tasks.find((task) => task.id === taskId);
+//     const updatedTask = { ...taskToUpdate, isComplete: !taskToUpdate.isComplete };
+//     const response = await axios.patch(`https://task-list-api-c17.onrender.com/tasks/${taskId}/${updatedTask.isComplete ? 'mark_complete' : 'mark_incomplete'}`, updatedTask);
+//     setTasks((prevTasks) => prevTasks.map((task) => (task.id === taskId ? response.data : task)));
+//   } catch (error) {
+//     console.error('Error updating task:', error);
+//   }
+// };
 
   const setComplete = (taskId) => {
     setTasks((prevTasks) => {
@@ -40,7 +51,7 @@ const App = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http from our tasklist goes here');
+        const response = await axios.get('http://localhost:5000/tasks');
         setTasks(response.data);
       } catch (error) {
         console.error('Error fetching tasks:', error);
