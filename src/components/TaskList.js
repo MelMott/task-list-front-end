@@ -26,11 +26,11 @@ TaskList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      isComplete: PropTypes.bool.isRequired,
+      isComplete: PropTypes.bool,
     })
   ).isRequired,
   setComplete: PropTypes.func,
-  removeTask: PropTypes.func
+  removeTask: PropTypes.func,
 };
 
 export default TaskList;
