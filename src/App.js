@@ -57,12 +57,20 @@ const App = () => {
   //   });
   // };
 
-  const removeTask = (taskId) => {
-    setTasks((prevTasks) => {
-      return prevTasks.filter((task) => task.id !== taskId);
-    });
+  // const removeTask = (taskId) => {
+  //   setTasks((prevTasks) => {
+  //     return prevTasks.filter((task) => task.id !== taskId);
+  //   });
+  // };
+
+  const removeTask = async (taskId) => {
+    try {
+      await axios.delete(`http://localhost:5000/tasks/${taskId}`);
+      setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    } catch (error) {
+      console.error('Error deleting task:', error);
+    }
   };
-  
   return (
     <div className="App">
       <header className="App-header">
