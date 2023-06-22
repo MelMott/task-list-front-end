@@ -1,0 +1,22 @@
+.new-task-form {
+display: flex;
+flex-direction: column;
+margin-bottom: 20px;
+}
+
+.new-task-form input[type="text"] {
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.new-task-form button[type="submit"] {
+padding: 10px;
+background-color: #4CAF50;
+color: orange;
+border: 3pt;
+cursor: pointer;
+}
+
+.new-task-form button[type="submit"]:hover {
+background-color: #45a049;
+}
