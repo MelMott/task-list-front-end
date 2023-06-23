@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskList from './components/TaskList.js';
-import NewTaskForm from './components/NewTaskForm';
+import NewTaskForm from './components/NewTaskForm.js';
 import './App.css';
 
 // const TASKS = [
@@ -82,7 +82,7 @@ const addTask = (newTask) => {
         <h1>Ada&apos;s Task List</h1>
       </header>
       <main>
-        <NewTaskForm addTask={addTask} />
+        <div><NewTaskForm addTask={addTask} /></div>
         <div><TaskList tasks={tasks} setComplete={setComplete} removeTask={removeTask} /></div>
       </main>
     </div>
