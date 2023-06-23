@@ -47,8 +47,13 @@ const App = () => {
   }
 };
 
-const addTask = (newTask) => {
-  setTasks((prevTasks) => [...prevTasks, newTask]);
+const addTask = async (newTask) => {
+  try {
+    const response = await axios.post('http://localhost:5000/tasks', newTask);
+    setTasks((prevTasks) => [...prevTasks, response.data.task]);
+  } catch (error) {
+    console.error('Error adding task:', error);
+  }
 };
 
   // const setComplete = (taskId) => {
@@ -82,7 +87,9 @@ const addTask = (newTask) => {
         <h1>Ada&apos;s Task List</h1>
       </header>
       <main>
-        <div><NewTaskForm addTask={addTask} /></div>
+        <div>
+          <NewTaskForm addTask={addTask} />
+        </div>
         <div><TaskList tasks={tasks} setComplete={setComplete} removeTask={removeTask} /></div>
       </main>
     </div>
