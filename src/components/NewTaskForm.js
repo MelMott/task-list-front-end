@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import "./NewTaskForm.css";
 
 const NewTaskForm = ({ addTask }) => {
 const [title, setTitle] = useState('');
@@ -39,7 +40,7 @@ return (
     onChange={(event) => setDescription(event.target.value)}
     placeholder="Enter task description"
     />
-    <button type="submit">Add Task</button>
+    <button className="new-task-form" type="submit">Add Task</button>
 </form>
 );
 };
